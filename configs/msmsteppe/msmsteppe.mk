@@ -191,7 +191,7 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/msmsteppe/audio_policy_configuration_odm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 else
 PRODUCT_COPY_FILES += \
-    $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/common/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+    $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/msmsteppe/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
 endif
 
 PRODUCT_COPY_FILES += \
@@ -314,11 +314,11 @@ persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac
 
 # A2DP offload support
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.bluetooth.a2dp_offload.supported=true
+ro.bluetooth.a2dp_offload.supported=false
 
 # Disable A2DP offload
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.bluetooth.a2dp_offload.disabled=false
+persist.bluetooth.a2dp_offload.disabled=true
 
 # A2DP offload DSP supported encoder list
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -368,7 +368,7 @@ persist.audio.fluence.voicecomm=true
 
 #add dynamic feature flags here
 PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio.feature.a2dp_offload.enable=true \
+vendor.audio.feature.a2dp_offload.enable=false \
 vendor.audio.feature.afe_proxy.enable=true \
 vendor.audio.feature.anc_headset.enable=true \
 vendor.audio.feature.battery_listener.enable=false \
@@ -448,3 +448,12 @@ PRODUCT_PACKAGES_ENG += \
 
 PRODUCT_PACKAGES_DEBUG += \
     AudioSettings
+
+# AOSP-on-CAF
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=false
+
+PRODUCT_COPY_FILES += \
+   frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+   frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml
+
