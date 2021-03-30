@@ -2818,6 +2818,18 @@
         <ctl name="HPHR_RDAC Switch" value="1" />
     </path>
 
+    <path name="headphones-ce">
+        <path name="headphones" />
+        <ctl name="RX_RX0 Digital Volume" value="76" />
+        <ctl name="RX_RX1 Digital Volume" value="76" />
+    </path>
+
+    <path name="headphones-no-ce">
+        <path name="headphones" />
+        <ctl name="RX_RX0 Digital Volume" value="84" />
+        <ctl name="RX_RX1 Digital Volume" value="84" />
+    </path>
+
     <path name="headphones-44.1">
         <ctl name="RX_Native" value="ON" />
         <path name="headphones" />
