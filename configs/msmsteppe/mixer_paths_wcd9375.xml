@@ -2878,7 +2878,7 @@
     </path>
 
     <path name="voice-speaker-2">
-        <path name="speaker-mono-2" />
+        <path name="speaker" />
     </path>
 
     <path name="voice-speaker-vbat">
@@ -2886,7 +2886,7 @@
     </path>
 
     <path name="voice-speaker-2-vbat">
-        <path name="speaker-vbat-mono-2" />
+        <path name="speaker-vbat" />
     </path>
 
     <path name="voice-speaker-mic">
